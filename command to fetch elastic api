@@ -1,0 +1,11 @@
+$headers = @{ Authorization = "Basic " + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("elastic:rishib1011")); "Content-Type" = "application/json" }; 
+try { 
+    $response = Invoke-RestMethod -Uri "http://localhost:9200/_security/api_key" -Method Post -Headers $headers -Body '{"name":"rag_example_key","expiration":"365d","role_descriptors":{"role":{"cluster":["all"],"index":[{"names":["*"],"privileges":["all"]}]}}}' -ErrorAction Stop; 
+    $response | ConvertTo-Json 
+} catch { 
+    Write-Host "Error: $_" 
+}
+
+
+
+$cred = "elastic:rishib1011"; $base64Auth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($cred)); Invoke-RestMethod -Uri "http://localhost:9200/_security/api_key" -Method Post -Headers @{Authorization="Basic $base64Auth"; "Content-Type"="application/json"} -Body '{"name":"rag_example_key","expiration":"365d","role_descriptors":{"role":{"cluster":["all"],"index":[{"names":["*"],"privileges":["all"]}]}}}

@@ -1,0 +1,10 @@
+Q: What roles are available in the system?
+A: The system includes the following roles: Admin, Provider, Handyman, and Customer (User).
+Q: What are some of the key service features offered by the system?
+A: The system offers features such as Service Management, Categories and Subcategories, Search and Filter Services, View Service FAQs, Add-On Services, Service Packages, and more.
+Q: How does the system handle payments?
+A: The system supports Payment Gateway Integration, In-App Wallet, Wallet Top-Up, View Detailed Payment Breakdowns, Coupons & Discounts, Cash on Delivery (COD) Payout System, and more.
+Q: Can handymen manage their availability?
+A: Yes, handymen can manage their availability by toggling their status to online or offline.
+Q: Does the system support push notifications?
+A: Yes, the system supports push notifications (Firebase) with personalized notification control and notification templates.

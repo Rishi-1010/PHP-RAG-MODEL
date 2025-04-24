@@ -1,0 +1,43 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+*.cache
+
+# Elasticsearch data
+elasticsearch-data/
+
+# Composer
+composer.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PDF files in data directory (optional, remove if you want to include sample PDFs)
+/data/*.pdf
+
+# Embeddings data
+/data/embeddings.json
+/data/vectordb.json
+
+# Debug files
+*.dump
+*.stackdump

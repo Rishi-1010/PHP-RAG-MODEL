@@ -1,0 +1,56 @@
+[
+    {
+        "chunk_number": 1,
+        "content": "BRIEFING  \nEU Legislation in Progress \n \nEPRS | European Parliamentary Research Service \nAuthor: Tambiama Madiega; Graphic: Samy Chahri \nMembers' Research Service \nPE 698.792 \u2013 June 2023 EN \nArtific...",
+        "source": "C:\\xampp\\htdocs\\php-llm-examples-main\/data\/AI_act.pdf",
+        "embedding_vector_length": 1536,
+        "first_10_values": [
+            0.0030536943,
+            0.0010061711,
+            0.018046347,
+            -0.010486696,
+            -0.020534335,
+            0.029675717,
+            0.010717481,
+            0.008505313,
+            0.025803013,
+            0.023168674
+        ]
+    },
+    {
+        "chunk_number": 2,
+        "content": "Those AI systems presenting only '\tlimited risk' would \nbe subject to very light transparency obligations. The Council agreed the EU Member States' general \nposition in December 2021. Parliament voted...",
+        "source": "C:\\xampp\\htdocs\\php-llm-examples-main\/data\/AI_act.pdf",
+        "embedding_vector_length": 1536,
+        "first_10_values": [
+            0.0070633404,
+            0.0144379465,
+            0.057464465,
+            -0.00061916467,
+            -0.015647095,
+            -0.0054890537,
+            0.0053902864,
+            2.9298086e-5,
+            0.031916723,
+            0.04542087
+        ]
+    },
+    {
+        "chunk_number": 3,
+        "content": "Proposal for a regulation of the European Parliament and of the Council laying down harmonised \nrules on artificial intelligence (\tartificial intelligence a\tct) and amending certain Union legislative ...",
+        "source": "C:\\xampp\\htdocs\\php-llm-examples-main\/data\/AI_act.pdf",
+        "embedding_vector_length": 1536,
+        "first_10_values": [
+            0.0019928224,
+            0.0028832979,
+            -0.005306005,
+            -0.016568983,
+            -0.020069472,
+            -0.004808567,
+            -0.0322045,
+            0.03559445,
+            0.015954861,
+            -0.0055117356
+        ]
+    }
+]
