@@ -19,7 +19,7 @@ $chat = new OllamaChat(config: $config);
 
 # Read PDF file
 printf ("- Reading the PDF files\n");
-$reader = new FileDataReader(dirname(dirname(dirname(__DIR__))) . '/data/questions_and_answers.pdf');
+$reader = new FileDataReader(dirname(dirname(dirname(__DIR__))) . '/data/new ST ebook.pdf');
 $documents = $reader->getDocuments();
 printf("Number of PDF files: %d\n", count($documents));
 

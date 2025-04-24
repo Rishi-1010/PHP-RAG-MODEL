@@ -80,7 +80,11 @@ $qa = new QuestionAnswering(
 echo "Question Answering system initialized\n";
 
 # Ask a question
-$question = "Q: How does the system handle payments?";
+if ($argc < 2) {
+    die("Please provide a question as a command-line argument.\nUsage: php qa.php \"Your question here\"\n");
+}
+
+$question = $argv[1];
 printf("\nQuestion: %s\n", $question);
 
 echo "\nGenerating embedding for the question...\n";

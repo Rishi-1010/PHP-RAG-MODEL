@@ -34,10 +34,10 @@ $qa = new QuestionAnswering(
     $chat
 );
 
-$answer = $qa->answerQuestion('How do you create a PDF in Python?');
+$answer = $qa->answerQuestion('What are the key features and benefits of the ST ebook?');
 printf("-- Answer:\n%s\n", $answer);
 
-foreach ($qa->getRetrievedDocuments() as $doc) {
-    printf("-- Document: %s\n", $doc->sourceName);
-    printf("-- Content (%d characters): %s\n", strlen($doc->content), $doc->content);
-}
+// foreach ($qa->getRetrievedDocuments() as $doc) {
+//     printf("-- Document: %s\n", $doc->sourceName);
+//     printf("-- Content (%d characters): %s\n", strlen($doc->content), $doc->content);
+// }

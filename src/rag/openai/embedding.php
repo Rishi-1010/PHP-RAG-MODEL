@@ -2,6 +2,7 @@
 /**
  * Embedding with OpenAI
  */
+ini_set('memory_limit', '2G'); // Increase memory limit to 2GB
 require dirname(dirname(dirname(__DIR__))) . '/vendor/autoload.php';
 
 // Debug information
@@ -10,7 +11,7 @@ $rootDir = dirname(dirname(dirname(__DIR__)));
 echo "Root directory: " . $rootDir . "\n";
 
 // Set PDF path
-$pdfPath = $rootDir . '/data/AI_act.pdf';
+$pdfPath = $rootDir . '/data/new ST ebook.pdf';
 echo "PDF path: " . $pdfPath . "\n";
 echo "PDF file exists: " . (file_exists($pdfPath) ? "Yes" : "No") . "\n\n";
 
@@ -48,15 +49,15 @@ try {
 }
 
 // Verify environment variables
-if (!isset($_ENV['OPENAI_API_KEY']) && !isset($_SERVER['OPENAI_API_KEY'])) {
-    die("Error: OPENAI_API_KEY environment variable is not set in config/.env\n");
-}
-if (!isset($_ENV['ELASTIC_URL']) && !isset($_SERVER['ELASTIC_URL'])) {
-    die("Error: ELASTIC_URL environment variable is not set in config/.env\n");
-}
-if (!isset($_ENV['ELASTIC_API_KEY']) && !isset($_SERVER['ELASTIC_API_KEY'])) {
-    die("Error: ELASTIC_API_KEY environment variable is not set in config/.env\n");
-}
+// if (!isset($_ENV['OPENAI_API_KEY']) && !isset($_SERVER['OPENAI_API_KEY'])) {
+//     die("Error: OPENAI_API_KEY environment variable is not set in config/.env\n");
+// }
+// if (!isset($_ENV['ELASTIC_URL']) && !isset($_SERVER['ELASTIC_URL'])) {
+//     die("Error: ELASTIC_URL environment variable is not set in config/.env\n");
+// }
+// if (!isset($_ENV['ELASTIC_API_KEY']) && !isset($_SERVER['ELASTIC_API_KEY'])) {
+//     die("Error: ELASTIC_API_KEY environment variable is not set in config/.env\n");
+// }
 
 // Set the variables for use in the rest of the code
 $openaiApiKey = $_ENV['OPENAI_API_KEY'] ?? $_SERVER['OPENAI_API_KEY'];
