@@ -34,7 +34,7 @@ $qa = new QuestionAnswering(
     $chat
 );
 
-$answer = $qa->answerQuestion('What are the key features and benefits of the ST ebook?');
+$answer = $qa->answerQuestion("Who was Ibn Battuta and what is he known for?");
 printf("-- Answer:\n%s\n", $answer);
 
 // foreach ($qa->getRetrievedDocuments() as $doc) {

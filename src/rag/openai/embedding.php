@@ -11,7 +11,7 @@ $rootDir = dirname(dirname(dirname(__DIR__)));
 echo "Root directory: " . $rootDir . "\n";
 
 // Set PDF path
-$pdfPath = $rootDir . '/data/new ST ebook.pdf';
+$pdfPath = $rootDir . '/data/HISTORY-ENGLISH.pdf';
 echo "PDF path: " . $pdfPath . "\n";
 echo "PDF file exists: " . (file_exists($pdfPath) ? "Yes" : "No") . "\n\n";
 
@@ -34,16 +34,16 @@ try {
     echo "\nEnvironment variables loaded successfully\n";
     
     // Debug: Print all environment variables
-    echo "\nCurrent environment variables:\n";
-    echo "OPENAI_API_KEY: " . (isset($_ENV['OPENAI_API_KEY']) ? 'Set' : 'Not Set') . "\n";
-    echo "ELASTIC_URL: " . (isset($_ENV['ELASTIC_URL']) ? 'Set' : 'Not Set') . "\n";
-    echo "ELASTIC_API_KEY: " . (isset($_ENV['ELASTIC_API_KEY']) ? 'Set' : 'Not Set') . "\n";
+    // echo "\nCurrent environment variables:\n";
+    // echo "OPENAI_API_KEY: " . (isset($_ENV['OPENAI_API_KEY']) ? 'Set' : 'Not Set') . "\n";
+    // echo "ELASTIC_URL: " . (isset($_ENV['ELASTIC_URL']) ? 'Set' : 'Not Set') . "\n";
+    // echo "ELASTIC_API_KEY: " . (isset($_ENV['ELASTIC_API_KEY']) ? 'Set' : 'Not Set') . "\n";
 
     // Also check $_SERVER
-    echo "\nServer environment variables:\n";
-    echo "OPENAI_API_KEY: " . (isset($_SERVER['OPENAI_API_KEY']) ? 'Set' : 'Not Set') . "\n";
-    echo "ELASTIC_URL: " . (isset($_SERVER['ELASTIC_URL']) ? 'Set' : 'Not Set') . "\n";
-    echo "ELASTIC_API_KEY: " . (isset($_SERVER['ELASTIC_API_KEY']) ? 'Set' : 'Not Set') . "\n";
+    // echo "\nServer environment variables:\n";
+    // echo "OPENAI_API_KEY: " . (isset($_SERVER['OPENAI_API_KEY']) ? 'Set' : 'Not Set') . "\n";
+    // echo "ELASTIC_URL: " . (isset($_SERVER['ELASTIC_URL']) ? 'Set' : 'Not Set') . "\n";
+    // echo "ELASTIC_API_KEY: " . (isset($_SERVER['ELASTIC_API_KEY']) ? 'Set' : 'Not Set') . "\n";
 } catch (\Exception $e) {
     die("Error loading .env file: " . $e->getMessage() . "\n");
 }

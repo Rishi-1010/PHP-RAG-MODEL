@@ -128,3 +128,9 @@ If you encounter any issues:
 2. Keep your `.env` file secure and don't share it
 3. Regularly update your dependencies for security patches
 4. Use appropriate access controls for your Elasticsearch instance 
+
+
+
+
+docker start elasticsearch
+curl http://localhost:9200

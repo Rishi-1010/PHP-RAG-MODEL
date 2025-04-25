@@ -19,7 +19,7 @@ $chat = new OllamaChat(config: $config);
 
 # Read PDF file
 printf ("- Reading the PDF files\n");
-$reader = new FileDataReader(dirname(dirname(dirname(__DIR__))) . '/data/new ST ebook.pdf');
+$reader = new FileDataReader(dirname(dirname(dirname(__DIR__))) . '/data/questions_and_answers.pdf');
 $documents = $reader->getDocuments();
 printf("Number of PDF files: %d\n", count($documents));
 
@@ -29,18 +29,35 @@ $splitDocuments = DocumentSplitter::splitDocuments($documents, 1000);
 printf("Number of splitted documents (chunk): %d\n", count($splitDocuments));
 
 # Embedding
-printf("- Embedding\n");
+printf("- Generating embeddings\n");
 $embeddingGenerator = new OllamaEmbeddingGenerator($config);
 $embeddedDocuments = $embeddingGenerator->embedDocuments($splitDocuments);
 
-# Elasticsearch
-printf("- Index all the embeddings to Elasticsearch\n");
-$es = (new ClientBuilder())::create()
-    ->setHosts(['http://localhost:9200'])
-    ->setApiKey('ZTlmd1haWUJxZXJKblNqc1BWVVY6UThqc2I3WHRTTGE2dTI0U1o0RnpqQQ==')
-    ->build();
+# Save embeddings to JSON file
+printf("- Saving embeddings to vectordb.json\n");
+$embeddingsData = [];
+foreach ($embeddedDocuments as $doc) {
+    $embeddingsData[] = [
+        'content' => $doc->content,
+        'embedding' => $doc->embedding,
+        'metadata' => $doc->metadata
+    ];
+}
 
-$elasticVectorStore = new ElasticsearchVectorStore($es, $indexName = 'ollama');
-$elasticVectorStore->addDocuments($embeddedDocuments);
+$jsonData = json_encode($embeddingsData, JSON_PRETTY_PRINT);
+file_put_contents(dirname(dirname(dirname(__DIR__))) . '/data/vectordb.json', $jsonData);
+printf("Saved %d embeddings to vectordb.json\n", count($embeddingsData));
 
-printf("Added %d documents in Elasticsearch with embedding included\n", count($embeddedDocuments));
+# Optional: Index to Elasticsearch
+$useElasticsearch = false; // Set to true if you want to use Elasticsearch
+if ($useElasticsearch) {
+    printf("- Indexing to Elasticsearch\n");
+    $es = (new ClientBuilder())::create()
+        ->setHosts(['http://localhost:9200'])
+        ->setApiKey('ZTlmd1haWUJxZXJKblNqc1BWVVY6UThqc2I3WHRTTGE2dTI0U1o0RnpqQQ==')
+        ->build();
+
+    $elasticVectorStore = new ElasticsearchVectorStore($es, $indexName = 'ollama');
+    $elasticVectorStore->addDocuments($embeddedDocuments);
+    printf("Added %d documents to Elasticsearch\n", count($embeddedDocuments));
+}
